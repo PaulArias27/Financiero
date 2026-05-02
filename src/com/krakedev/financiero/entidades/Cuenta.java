@@ -5,11 +5,13 @@ public class Cuenta {
 	private String id;
 	private double saldoActual;
 	private String tipo;
+	private Cliente propietario;
 	
 	public Cuenta(String id) {
 		this.id = id;
 		this.saldoActual = 0;
 		this.tipo = "A";
+		this.propietario = new Cliente();
 	}
 
 	public String getId() {
@@ -36,10 +38,24 @@ public class Cuenta {
 		this.tipo = tipo;
 	}
 	
+	
+	public Cliente getPropietario() {
+		return propietario;
+	}
+
+	public void setPropietario(Cliente propietario) {
+		this.propietario = propietario;
+	}
+
 	public void imprimir() {
-		String mensaje;
-		mensaje = "ID: "+ id + ", Saldo Actual: " + saldoActual + 
-				"Tipo: " + tipo;
+		
+		 System.out.println("ID: " + id);
+	     System.out.println("Saldo Actual: " + saldoActual);
+	     System.out.println("Tipo: " + tipo);
+
+	     System.out.println("Cédula cliente: " + propietario.getCedula());
+	     System.out.println("Nombre cliente: " + propietario.getNombre());
+	     System.out.println("Apellido cliente: " + propietario.getApellido());
 	}
 	
 
